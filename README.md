@@ -81,7 +81,7 @@ Configure the following pins as **GPIO_Output**:
 
 1.  Clone this repository:
     ```bash
-    git clone https://github.com/SepSR/stm32f4-ili9341-driver.git
+    git clone https://github.com/SepSR/High-Performance-ILI9341-SPI-LCD-Driver-on-STM32F4.git
     ```
 2.  Open **STM32CubeIDE** and import this project.
 3.  Modify the displayed text directly in the code:

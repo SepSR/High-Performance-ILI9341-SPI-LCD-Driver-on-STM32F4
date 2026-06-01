@@ -2,12 +2,16 @@
 
 An optimized, bare-metal C driver for the **ILI9341 240x320 TFT LCD** running on the **STM32F401/F411 (WeAct Black Pill)** microcontroller. This repository demonstrates a highly optimized, flicker-free bouncing text animation (screensaver) designed to push bare-metal SPI throughput to its practical limits without using external RTOS or heavy graphics libraries.
 
+<p align="center">
+  <img src="assets/demo.gif" alt="ILI9341 Bouncing Screensaver Demo" width="380"/>
+</p>
+
 ---
 
 ## 📌 Features & Engineering Achievements
 
 *   **Flicker-Free Rendering (Dirty Rectangle Clearing)** ⚡  
-    Standard full-screen clearing over SPI introduces severe rendering latency. By implementing a * Rectangle algorithm *, only the bounding box of the previous text position is cleared with black pixels before redrawing. This reduces SPI bandwidth utilization per frame by **over 98%**, pushing the rendering speed to a fluid **60+ FPS**.
+    Standard full-screen clearing over SPI introduces severe rendering latency. By implementing a custom **Dirty Rectangle** algorithm, only the bounding box of the previous text position is cleared with black pixels before redrawing. This reduces SPI bandwidth utilization per frame by **over 98%**, pushing the rendering speed to a fluid **60+ FPS**.
 *   **Direct Pixel Streaming** 🧵  
     Characters are rendered on-the-fly by streaming pixel bytes directly over the SPI transmit register, entirely eliminating the need for large, RAM-consuming frame buffers.
 *   **Complete ASCII Font Map** 🔠  
@@ -18,6 +22,10 @@ An optimized, bare-metal C driver for the **ILI9341 240x320 TFT LCD** running on
 ---
 
 ## 🔌 Hardware Setup & Schematic Enhancements
+
+<p align="center">
+  <img src="assets/hardware.jpg" alt="Physical Hardware Connections and Decoupling" width="450"/>
+</p>
 
 ### 📐 Circuit Design Choices for Signal Integrity
 During initial hardware testing, high-frequency switching on the SPI bus and backlight power transitions introduced transient voltage drops and signal degradation. To resolve these real-world challenges, the following hardware enhancements were implemented:

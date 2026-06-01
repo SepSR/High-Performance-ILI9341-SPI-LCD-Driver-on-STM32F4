@@ -2,8 +2,9 @@
 
 An optimized, bare-metal C driver for the **ILI9341 240x320 TFT LCD** running on the **STM32F401/F411 (WeAct Black Pill)** microcontroller. This repository demonstrates a highly optimized, flicker-free bouncing text animation (screensaver) designed to push bare-metal SPI throughput to its practical limits without using external RTOS or heavy graphics libraries.
 
+
 <p align="center">
-  <video src="assets/demo.mp4" width="380" autoplay loop muted playsinline></video>
+  <video src="https://github.com/user-attachments/assets/ebbf3d36-e2a0-4d19-ae6e-5f17e160fa29" width="380" autoplay loop muted playsinline></video>
 </p>
 
 ---
